@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 
+import { Events } from "../api/events";
+
 class AddEvent extends Component {
   constructor(props) {
     super(props);
@@ -21,11 +23,29 @@ class AddEvent extends Component {
   }
 
   handleSubmit = (event) => {
+    // prevents page from refreshing onSubmit
     event.preventDefault();
 
+    const { title, description, date } = this.state;
+
     // TODO: Create backend Meteor methods to save created events
-    alert("Will be Saved in a little bit :)")
+    // alert("Will be Saved in a little bit :)")
+
+    // add method `insert` to db
+    Events.insert({
+      title,
+      description,
+      date
+    });
+
+    // clears input fields onSubmit
+    this.setState({
+      title: "",
+      description: "",
+      date: ""
+    })
   }
+
 
   render() {
     return (

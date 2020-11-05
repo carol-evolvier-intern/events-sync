@@ -12,6 +12,7 @@
     "jquery": "^3.5.1",
     "meteor-node-stubs": "^1.0.1",
     "react": "^17.0.1",
+    "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^17.0.1"
   },
   "meteor": {
